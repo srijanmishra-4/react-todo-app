@@ -14,8 +14,8 @@ function ProtectedRoute({ children }) {
     }
 
     try {
-        jwtDecode(token);  // Just to check if the token is valid
-        return children;   // ✅ Render `Home` instead of redirecting
+        jwtDecode(token);
+        return children;
     } catch (error) {
         return <Navigate to="/signin" />;
     }
@@ -38,7 +38,7 @@ function NavigateToCorrectPage() {
 
 function App() {
     return (
-        <Router>
+        <Router basename="/react-todo-app">  {/* ✅ Add basename */}
             <Routes>
                 <Route path="/" element={<NavigateToCorrectPage />} />
                 <Route path="/signin" element={<Signin />} />

@@ -6,7 +6,7 @@ const UpdateTodo = ({ uid, tid, initialTitle, initialDate, onCancel, onTaskUpdat
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch("http://192.168.29.244:3000/editTask", {
+      const response = await fetch("https://react-todo-server-x59m.onrender.com/editTask", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uid, tid, task: updatedTitle, date: updatedDate }),

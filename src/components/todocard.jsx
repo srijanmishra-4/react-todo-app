@@ -3,7 +3,7 @@ const TodoCard = ({ uid, tid, title, date, status, onTaskUpdate, onEdit }) => {
   // Function to delete a task
   const handleDelete = async () => {
       try {
-          const response = await fetch(`http://192.168.29.244:3000/deleteTask?uid=${uid}&tid=${tid}`, { method: "DELETE" });
+          const response = await fetch(`https://react-todo-server-x59m.onrender.com/deleteTask?uid=${uid}&tid=${tid}`, { method: "DELETE" });
           if (!response.ok) throw new Error("Failed to delete task");
           
           onTaskUpdate(); // Refresh task list
@@ -15,7 +15,7 @@ const TodoCard = ({ uid, tid, title, date, status, onTaskUpdate, onEdit }) => {
   // Function to mark a task as done
   const handleMarkDone = async () => {
       try {
-          const response = await fetch("http://192.168.29.244:3000/updateTodo", {
+          const response = await fetch("https://react-todo-server-x59m.onrender.com/updateTodo", {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ uid, tid }),
@@ -70,3 +70,4 @@ const TodoCard = ({ uid, tid, title, date, status, onTaskUpdate, onEdit }) => {
 };
 
 export default TodoCard;
+

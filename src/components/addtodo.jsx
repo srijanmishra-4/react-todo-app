@@ -11,7 +11,7 @@ const AddTodo = ({ uid, onCancel, onAdd }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://192.168.29.244:3000/addTask", {
+      const response = await fetch("https://react-todo-server-x59m.onrender.com/addTask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uid, task: title, date }),

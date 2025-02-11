@@ -26,7 +26,7 @@ const SigninForm = () => {
         e.preventDefault();
         console.log("Inside the HandleSignIN function");
     
-        const response = await fetch('http://192.168.29.244:3000/auth', {
+        const response = await fetch('https://react-todo-server-x59m.onrender.com/auth', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },

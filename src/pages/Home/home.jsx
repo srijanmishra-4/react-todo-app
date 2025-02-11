@@ -17,7 +17,7 @@ const Home = () => {
     // Fetch tasks and username from API
     const fetchUserData = async () => {
         try {
-            const response = await fetch(`http://192.168.29.244:3000/fetchData/${uid}`);
+            const response = await fetch(`https://react-todo-server-x59m.onrender.com/fetchData/${uid}`);
             if (!response.ok) throw new Error("Failed to fetch user data");
 
             const data = await response.json();

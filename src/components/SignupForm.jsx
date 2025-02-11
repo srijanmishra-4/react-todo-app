@@ -39,7 +39,7 @@ const SignupForm = () => {
         const formData = { uname: name, email, password };
 
         try {
-            const response = await fetch("http://192.168.29.244:3000/register", {
+            const response = await fetch("https://react-todo-server-x59m.onrender.com/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
